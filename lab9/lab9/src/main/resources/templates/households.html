@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <meta charset="UTF-8">
+    <title>Households</title>
+</head>
+<body>
+<h1>Households</h1>
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Eircode</th>
+        <th>Number of Occupants</th>
+        <th>Max Number of Occupants</th>
+        <th>Owner Occupied</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="household : ${households}">
+        <td th:text="${household.eircode}">Eircode</td>
+        <td th:text="${household.numberOfOccupants}">Number of Occupants</td>
+        <td th:text="${household.maxNumberOfOccupants}">Max Number of Occupants</td>
+        <td th:text="${household.ownerOccupied ? 'Yes' : 'No'}">Owner Occupied</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

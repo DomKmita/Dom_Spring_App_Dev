@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <link rel="stylesheet" th:href="@{/styles.css}" />
+  <meta charset="UTF-8">
+  <title>Pets</title>
+</head>
+<body>
+<h1>Pets</h1>
+<table class="styled-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Breed</th>
+    <th>Age</th>
+    <th>Household Eircode</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="pet : ${pets}">
+    <td th:text="${pet.name}">Pet Name</td>
+    <td th:text="${pet.animalType}">Animal Type</td>
+    <td th:text="${pet.breed}">Breed</td>
+    <td th:text="${pet.age}">Age</td>
+    <td th:text="${pet.household.eircode}">Eircode</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
