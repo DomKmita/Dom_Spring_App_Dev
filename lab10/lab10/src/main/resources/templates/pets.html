@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Heroes</h1>
+<table class="styled-table" >
+    <thead>
+    <tr>
+        <th>Alias</th>
+        <th>AKA</th>
+        <th>Alias</th>
+        <th>Alias</th>
+    </tr>
+    </thead>
+<tr th:each="hero: ${heroes}">
+    <td th:text="${hero.alias}" />
+    <td th:text="${hero.firstName} + ' ' + ${hero.lastName}" />
+    <td th:text="${hero.getUniverse()}" />
+    <td th:text="${hero.getTeam() != null ? hero.getTeam().getName() : '-'}"></td>
+</tr>
+</table>
+</body>
+</html>
